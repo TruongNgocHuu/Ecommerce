@@ -85,6 +85,15 @@ public class CartControllerTest {
         Cart c = response.getBody();
         Assert.assertNotNull(c);
         Assert.assertEquals(BigDecimal.valueOf(361.8), c.getTotal());
-
+    }
+    @Test
+    public void testCartAddWrongUserName() {
+        ModifyCartRequest request = new ModifyCartRequest();
+        request.setItemId(1L);
+        request.setQuantity(1);
+        request.setUsername("Joihn");
+        ResponseEntity<Cart> response = cartController.addTocart(request);
+        Assert.assertNull(userRepositor.findByUsername("Joihn"));
+        Assert.assertEquals(404, response.getStatusCodeValue());
     }
 }
