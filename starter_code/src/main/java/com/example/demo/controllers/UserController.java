@@ -3,6 +3,10 @@ package com.example.demo.controllers;
 import java.security.SecureRandom;
 import java.util.Optional;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +27,7 @@ import com.example.demo.model.requests.CreateUserRequest;
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
-	
+	public static final Logger log = LogManager.getLogger(UserController.class);
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -56,6 +60,8 @@ public class UserController {
 		}
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
 		userRepository.save(user);
+
+		log.debug(Level.WARN);
 		return ResponseEntity.ok(user);
 	}
 	
