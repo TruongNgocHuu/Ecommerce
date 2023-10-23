@@ -95,6 +95,6 @@ public class CartControllerTest {
         ResponseEntity<Cart> response = cartController.addTocart(request);
         Assert.assertNull(userRepositor.findByUsername("Joihn"));
         Assert.assertEquals(404, response.getStatusCodeValue());
-        System.out.println("a");
+        System.out.println("ab");
     }
 }
