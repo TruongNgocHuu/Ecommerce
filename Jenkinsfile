@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the application
-                sh 'mvn clean install'
+                sh 'mvn spring-boot:run'
             }
         }   
     }
