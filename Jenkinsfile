@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Build') {
            steps {
+               bat 'cd starter_code'
                 bat 'mvn install'
             }       
         }
