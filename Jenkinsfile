@@ -8,10 +8,15 @@ pipeline {
             }
         }
         stage('Build') {
-          steps{
-                dir('starter_code') {
-                    // Change directory to 'starter_code'
-                    bat 'mvn install'
+            steps {
+                script {
+                    // Change directory to 'starter_code' without creating a temporary folder
+                    def status = dir(path: 'starter_code', returnStatus: true) {
+                        bat 'mvn install'
+                    }
+                    if (status != 0) {
+                        error "Failed to change directory or execute Maven build"
+                    }
                 }
             }
         }
