@@ -9,9 +9,8 @@ pipeline {
         }
         stage('Build') {
            steps {
-                dir('Ecommerce/starter_code') {
-                    sh 'mvn install'
-                }
+                sh 'cd starter_code' 
+                sh 'mvn install'
             }       
         }
     }
