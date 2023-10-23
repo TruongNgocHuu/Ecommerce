@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps{
-            dir('https://github.com/TruongNgocHuu/Ecommerce/starter_code'){    
+            dir('Ecommerce/starter_code'){    
                     bat 'mvn install'
                 } 
             }
