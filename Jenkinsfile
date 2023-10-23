@@ -8,13 +8,11 @@ pipeline {
             }
         }
         stage('Build') {
-            steps{
-                dir('Ecommerce/starter_code')
-                {
+           steps {
+                dir('Ecommerce/starter_code') {
                     bat 'mvn install'
                 }
-                    
-            }      
+            }       
         }
     }
 }
