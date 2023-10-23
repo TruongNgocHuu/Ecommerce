@@ -4,16 +4,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from the repository
-                git 'https://github.com/TruongNgocHuu/Ecommerce'
+                git 'https://github.com/TruongNgocHuu/Ecommerce/starter_code'
             }
         }
         stage('Build') {
             steps {
                 // Build the application
-                dir('starter_code'){
                     bat 'mvn install'
-                }
-                
             }
         }   
     }
