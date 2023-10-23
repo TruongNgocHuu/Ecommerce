@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from the repository
-                git 'https://github.com/TruongNgocHuu/Ecommerce/starter_code'
+                git 'https://github.com/TruongNgocHuu/Ecommerce'
             }
         }
         stage('Build') {
