@@ -10,7 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 dir('starter_code') {
-                    sh 'mvn install'
+                    script {
+                        if (isUnix()) {
+                            sh 'mvn clean package'
+                        } else {
+                            bat 'mvn clean package'
+                        }
+                    }
                 }
             }
         }
