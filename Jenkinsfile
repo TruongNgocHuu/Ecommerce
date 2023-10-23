@@ -8,10 +8,11 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
-                // Build the application
+           steps dir('starter_code'){
+             // Build the application
                     bat 'mvn install'
             }
+           
         }   
     }
 }
