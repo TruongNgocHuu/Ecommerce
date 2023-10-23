@@ -1,8 +1,6 @@
 
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-D
-starter_code/pom.xml,8\4\84914c48cf135c61cf037eda68ac19ef0fdc2b91
 s
 Cstarter_code/src/main/java/com/example/demo/SareetaApplication.java,5\3\53f4ca1fffc2905ab867c39dd0de5488335bcada
 Ž
