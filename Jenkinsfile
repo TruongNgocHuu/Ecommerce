@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the application
-                dir('stater_code'){
+                dir('starter_code'){
                     bat 'mvn install'
                 }
                 
