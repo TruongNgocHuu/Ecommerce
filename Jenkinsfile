@@ -7,6 +7,10 @@ pipeline {
                 git 'https://github.com/TruongNgocHuu/Ecommerce.git'
             }
         }
-        
+        stage('Build') {
+           steps {
+                sh 'mvn install'
+            }       
+        }
     }
 }
