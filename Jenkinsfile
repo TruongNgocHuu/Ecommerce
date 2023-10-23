@@ -5,11 +5,11 @@ pipeline {
             steps {
                 // Checkout the source code from the repository
                 git 'https://github.com/TruongNgocHuu/Ecommerce'
+                sh 'cd starter_code' 
             }
         }
         stage('Build') {
            steps {
-                sh 'cd starter_code' 
                 sh 'mvn install'
             }       
         }
