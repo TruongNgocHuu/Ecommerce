@@ -9,10 +9,11 @@ pipeline {
         }
         stage('Build') {
            steps {
-               bat ('cd starter_code'){
-                   bat 'mvn install'
-               }
+               bat 'cd starter_code'     
             } 
+            steps {
+               bat 'mvn install'     
+            }
         }
     }
 }
