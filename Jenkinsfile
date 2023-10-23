@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the application
-                bat'mvn clean compile'
+                bat 'mvn spring-boot:run'
             }
         }   
     }
