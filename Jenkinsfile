@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-                    dir('C:\\Users\\huutr\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Ecommerce\\starter_code') {
+                    dir('C:\\Users\\huutr\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Ecommerce\\startercode') {
                         bat 'mvn install'
                     }
                 }
