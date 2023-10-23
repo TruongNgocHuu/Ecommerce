@@ -8,11 +8,9 @@ pipeline {
             }
         }
         stage('Build') {
-           steps {
-               bat 'cd starter_code'     
-            } 
-            steps {
-               bat 'mvn install'     
+        dir('starter_code') {
+                // Change directory to 'starter_code'
+                bat 'mvn install'
             }
         }
     }
