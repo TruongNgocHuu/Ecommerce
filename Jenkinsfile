@@ -11,6 +11,7 @@ pipeline {
             steps {
                     bat 'cd starter_code'          
                     echo 'point to starter_code'
+                bat 'mvn install'
             }
         }
     }
