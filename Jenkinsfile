@@ -25,7 +25,7 @@ pipeline {
             steps {
                 dir('starter_code/target') {
                     script {
-                        bat 'copy Ecommerce-Application-0.0.1-SNAPSHOT.war'
+                        bat 'copy auth-course-0.0.1-SNAPSHOT.war'
                     }
                 }
             }
