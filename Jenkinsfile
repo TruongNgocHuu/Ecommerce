@@ -25,7 +25,7 @@ pipeline {
             steps {
                 dir('starter_code/target') {
                     script {
-                        sh 'cp auth-course-0.0.1-SNAPSHOT.war D:/Deploy/'
+                        sh 'cp auth-course-0.0.1-SNAPSHOT.war'
                     }
                 }
             }
