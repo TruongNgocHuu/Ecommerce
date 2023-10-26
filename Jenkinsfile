@@ -15,6 +15,7 @@ pipeline {
                             sh 'mvn clean package'
                         } else {
                             bat 'mvn clean package'
+                            echo 'Success'
                         }
                     }
                 }
