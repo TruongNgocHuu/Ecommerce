@@ -19,6 +19,13 @@ pipeline {
                     }
                 }
             }
+            steps {
+                // Copy the built artifact to the deployment location on the local machine
+                sh 'cp path/to/repository/folder/target/your-application.jar /path/to/deployment/location'
+                
+                // Additional deployment steps if needed
+                // sh '...'
+            }
         }
     }
 }
