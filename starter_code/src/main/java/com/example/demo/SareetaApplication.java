@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.controllers.UserController;
 import com.example.demo.security.WebSecurityConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.util.List;
 
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ import com.example.demo.model.persistence.repositories.UserRepository;
 @RestController
 @RequestMapping("/api/order")
 public class OrderController {
-	
+	Logger log = org.apache.logging.log4j.LogManager.getLogger(OrderController.class);
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -31,12 +32,15 @@ public class OrderController {
 	
 	@PostMapping("/submit/{username}")
 	public ResponseEntity<UserOrder> submit(@PathVariable String username) {
+		log.info("Ordering");
 		User user = userRepository.findByUsername(username);
 		if(user == null) {
+			log.info("Order faild, Please Check Again... !!!");
 			return ResponseEntity.notFound().build();
 		}
 		UserOrder order = UserOrder.createFromCart(user.getCart());
 		orderRepository.save(order);
+		log.info("Order Success. Thanks you");
 		return ResponseEntity.ok(order);
 	}
 	

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info" name="SplunkConfig" packages="">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
+        </Console>
+        <SplunkHttp
+                name="http"
+                url="http://localhost:8088"
+                token="8576b827-a87e-4df6-9283-3669747dafff"
+                index="udacity_index"
+                source="udacity"
+                sourcetype="log4j"
+                disableCertificateValidation="true">
+            <PatternLayout pattern="%m"/>
+        </SplunkHttp>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="com.example.demo.controllers" level="info">
+            <AppenderRef ref="http"/>
+        </Logger>
+        <Logger name="com.example.demo" level="trace">
+            <AppenderRef ref="console"/>
+        </Logger>
+        <Root level="INFO"/>
+    </Loggers>
+</Configuration>
